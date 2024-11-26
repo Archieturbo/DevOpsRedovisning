@@ -1,9 +1,9 @@
 name: Simple pipeline
 
 on:
-    push:
-       paths:
-          - '**/Program.cs'
+  push:
+    paths:
+      - '**/Program.cs'
 
 jobs:
   Build:
@@ -13,14 +13,10 @@ jobs:
     - name: checkout
       uses: actions/checkout@v4
 
-
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
       with: 
         dotnet-version: 8.0
 
     - name: build project
-      run: dotnet build
-    
-  
-      
+      run: dotnet build path/to/your/project.csproj
