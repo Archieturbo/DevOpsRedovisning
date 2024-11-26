@@ -1,22 +1,10 @@
-name: Simple pipeline
 
-on:
-  push:
-    paths:
-      - '**/Program.cs'
-
+name: testing from the DON
+on: workflow_dispatch
 jobs:
-  Build:
+  build-projekt:
     runs-on: ubuntu-latest
-
     steps:
-    - name: checkout
-      uses: actions/checkout@v4
-
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v4
-      with: 
-        dotnet-version: 8.0
-
-    - name: build project
-      run: dotnet build path/to/your/project.csproj
+    - uses: actions/checkout@v4
+    - name: build-projekt
+      run: dotnet build
